@@ -1,0 +1,19 @@
+//padding
+@mixin padding ($values...) {
+    @each $var in $values {
+        padding: #{$var};
+    }
+}
+@mixin margin ($values...){
+    @each $var in $values {
+        margin: #{$var};
+    }
+    
+}
+
+// for mobile font-size and line height
+
+@mixin basicStyle ($fs, $lh) {
+    font-size: $fs;
+    line-height: $lh;
+}

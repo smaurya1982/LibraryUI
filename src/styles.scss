@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "assets/scss/variables";
+@import "assets/scss/mixins";
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+// ... or  
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+//fonts
+$fontFamilySerif: BookSerif-Regular;
+$fontFamilySans: BookSans, Verdana, sans-serif;
+
+@font-face {
+   font-family: 'WellsFargoSerif_W_Rg', sans-serif;
+   src: url(./assets/fonts/Sans/WOFF2/BookSans_W_Rg.woff2) format('woff2'),
+        url(./assets/fonts/Sans/WOFF/BookSans_W_Rg.woff) format('woff'),
+        url(./assets/fonts/Sans/WOFF2/BookSans_W_SBd.woff2) format('woff2'),
+        url(./assets/fonts/Sans/WOFF/BookSans_W_SBd.woff) format('woff')
+        url(./assets/fonts/Serif/WOFF2/BookSerif_W_Rg.woff2) format('woff2'),
+        url(./assets/fonts/Serif/WOFF/BookSerif_W_Rg.woff) format('woff');     
+   font-display: optional;
+ }
+ body { 
+  font-family: BookSans,sans-serif;
+   box-sizing: border-box;
+   font-size: 12px;
+   }
+
+//common
+.outer-box {
+    border: 1px solid $box-border;
+    border-top: none;
+}
+.box {
+    width: 864px;
+    height: auto;
+    @include margin(35px auto);
+    @include padding(48px);    
+    border-radius: 12px;
+    box-shadow: 0 3px 13px 4px rgba(0, 0, 0, 0.13);
+    background-color: $white;
+}
+h3 {
+    @include basicStyle(26px, 31px);
+    @include padding(0 0 10px 0);
+    color: $secondary-red;
+    font-family: $fontFamilySerif;
+}
+h4 {
+    @include basicStyle(20px, 31px);
+    @include padding(0 0 10px 0);
+    font-family: $fontFamilySans;
+}
+.has-error { 
+    color: $primary-red;
+    font-size: 11px;
+}
+// form
+.form-control:focus {
+    box-shadow: 0 0 0 0.1rem rgba(0,123,255,.25);
+}
+.col-form-label, .mytable, .form-control {
+    font-size: 12px;
+}
+//widths
+.w-80 {
+    width: 80%;
+}
+.w-90 {
+    width: 90%;
+}
+//Button colors
+.btn {
+    width: 126px;
+    height: 34px;
+    border-radius: 5px; 
+}
+.btn-red {
+    @extend .btn;
+    background-color: $secondary-red!important;
+    border:2px solid $secondary-red;
+    color: $white!important;
+}
+.btn-gray {
+    @extend .btn;
+    background-color: $white!important;
+    border:2px solid $footer-links!important;
+}
+.btn-blue {
+    @extend .btn;
+    background-color: $primary-red!important;
+    color: $white!important;
+}
+
+//qution modle
+.p-dialog-content {
+    overflow-y: auto;
+    width: 864px;
+    height: auto;
+    margin: 35px auto;
+    padding: 48px;
+    border-radius: 12px;
+    box-shadow: 0 3px 13px 4px rgba(0, 0, 0, 0.13);
+    background-color: #fff;
+}
+
+
+//material Toggle button
+
+.mat-button-toggle-label-content{
+    line-height: 0px !important;
+    @include padding(12px 10px 10px 10px !important);    
+  }
+  .mat-button-toggle-checked {
+    background-color: $primary-red;    
+    color: $white !important;
+}
+.mat-button-toggle-label-content {
+    line-height: 0px !important;
+    @include padding(15px 10px 13px 10px !important);  
+    width: 60px;
+    font-size: 12px;
+}
+
+// snack bar
+
+.green-snackbar {
+    background: $primary-green;
+    color: $white;
+  }
+.red-snackbar {
+    background: $red-color;
+    color: $white;
+  }
+
+  .ngx-pagination .current {
+
+    background: $primary-red !important;  
+ 
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    background-color: $font-color1;
+
+}
+.ng-select .ng-select-container:hover{
+    border :1px solid $font-color1;
+}
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background-color: $primary-red;  
+}
+//container width
+@media (min-width: 1200px) {
+    .container {
+      width: 1080px;
+    }
+  }
+
+
+  //Responsive for mobile
+@media (max-width: 576px) { 
+
+    h4 {
+        @include basicStyle(18px, 26px);
+    }
+ .box {
+     width: 100%;
+ }
+ .btn {
+    width: 102px;
+ }
+  }
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

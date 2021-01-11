@@ -1,0 +1,25 @@
+
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+
+
+.header {
+    min-height: 60px;
+    background-color: $primary-blue !important;
+    border-bottom: 4px solid $header-border;
+}
+
+.navbar-brand {
+    color:$white;
+}
+.navbar {
+  
+    @include margin(-1px -16px 30px -16px)
+}
+
+.nav-item a {
+    color:$white;
+}
+.nav-item a:hover, .navbar-brand:hover {
+    color:$header-border;
+}

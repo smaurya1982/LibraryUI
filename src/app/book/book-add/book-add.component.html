@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="container">
+      <h3 class="text-center"></h3>
+      <div class="box">
+        <h4 class="text-center">{{mylabels.add_book}}</h4>
+        <form [formGroup]="bookForm" (ngSubmit)="SubmitForm()">
+          <div class="row">
+           
+               <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <label for="colFormLabel" class="col-sm-2 col-form-label">Book Name :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="Book_Name">
+                    <div class="has-error" *ngIf="f.Book_Name.touched && !f.Book_Name.valid">
+                      Book Name required!
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="form-group row">
+                  <label for="colFormLabel" class="col-sm-2 col-form-label">Author :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="Author">
+                    <div class="has-error " *ngIf="f.Author.touched && !f.Author.valid">
+                      Author  required!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          
+              <div class="col-12 col-md-8 col-sm-12">
+                <div class="form-group row">
+                  <label for="colFormLabel" class="col-sm-3 col-form-label">Status :</label>
+                  <div class="col-sm-9">
+                    <mat-button-toggle-group name="fontStyle" formControlName="Options"  aria-label="Font Style">
+                      <mat-button-toggle [value]=true>Available</mat-button-toggle>
+                      <mat-button-toggle [value]=false checked>Rented</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </div>
+                </div>
+              </div>
+            
+  
+            <div class="container">
+              <div class="col-md-12">
+                <div class="row d-flex justify-content-end">
+                  <button [routerLink]="['']" type="button"
+                  class="btn btn-gray btn-sm mr-4">{{mylabels.cancel}}</button>
+                  <!-- <button type="reset" class="btn btn-gray btn-sm mr-4">{{mylabels.cancel}}</button> -->
+                  <button type="submit" [disabled]="!bookForm.valid"
+                    class="btn btn-red btn-sm  ">{{mylabels.save}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+  
+      </div>
+      <!--box end-->
+    </div>
+    <!--container end-->
+  </div>
+  <!--top row end-->
+  
